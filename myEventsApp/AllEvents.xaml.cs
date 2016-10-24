@@ -43,13 +43,12 @@ namespace myEventsApp
         }
 
         /// <summary>
-        /// Initialises the data.
+        /// Initialises initial dummy data
         /// </summary>
         /// <returns>The data.</returns>
         private async Task initialiseData()
         {
-            //geocodePage = new GeocodePage();
-
+            
             var myEvent = new TodoItem
             {
 
@@ -64,21 +63,18 @@ namespace myEventsApp
                 IsFinished = false
 
             };
-
-
+            
             myAddress = myEvent.EventStreetNumber + " " + myEvent.EventStreetName + " , " + myEvent.EventSuburb + " , " + myEvent.EventPostCode;
 
             geocodePage = new GeocodePage();
 
-            //await initialiseAddress(myAddress);
-
+        
             await geocodePage.getGeoLocation(myAddress);
 
             myEvent.EventLatitude = geocodePage.EventLatitude;
             myEvent.EventLongitude = geocodePage.EventLongitude;
 
             InitialiseEventData(myEvent);
-
 
 
         }
@@ -89,8 +85,7 @@ namespace myEventsApp
 
         private async void InitialiseEventData(TodoItem myEvent)
         {
-            // add the data to the database
-
+            // release this await to add dummy data to the azure cloud if needed
             //await TodoItemManager.DefaultManager.SaveTaskAsync(myEvent);
 
             // retrieve all data back from database for list initalisation
