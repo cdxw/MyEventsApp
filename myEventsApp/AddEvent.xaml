@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="myEventsApp.AddEvent" Title="Add New Event">
+  <ContentPage.ToolbarItems>
+
+  </ContentPage.ToolbarItems>
+
+  <ContentPage.Content>
+    
+    <ScrollView>
+     
+    <StackLayout VerticalOptions="StartAndExpand" Padding="5">
+     
+      <Entry x:Name="evName" Placeholder="Event Name"></Entry>
+      <Label Text="Description"></Label>
+      <Editor x:Name="evDescription"></Editor>
+      <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+      <DatePicker x:Name="evStartDate"></DatePicker>
+      <DatePicker x:Name="evFinishDate"></DatePicker>
+      <Entry x:Name="evStreetNum" Placeholder="Street Number"></Entry>
+      <Entry x:Name="evStreet" Placeholder="Street Name"></Entry>
+      <Entry x:Name="evSuburb" Placeholder="Suburb"></Entry>
+      <Entry x:Name="evPostcode" Placeholder="PostCode"></Entry>
+      <Image x:Name="image"/>
+      <Button x:Name="takePhoto" Text="Add Photo"/>
+      <Button x:Name="addEvent" Text="Submit" Clicked="AddNewEvent"></Button>
+     
+    </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+ 
+</ContentPage>

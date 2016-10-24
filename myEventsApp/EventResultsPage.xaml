@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" x:Class="myEventsApp.EventResultsPage">
+  <ContentPage.ToolbarItems>
+
+  </ContentPage.ToolbarItems>
+  <StackLayout VerticalOptions="StartAndExpand" Padding="5">
+    <maps:Map WidthRequest="320" HeightRequest="200" x:Name="MyResultMap" IsShowingUser="true" MapType="Street" />
+    <Label x:Name="eventNameLbl" FontSize = "20" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+    <ListView x:Name="eventReviewList">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid>
+              <!--Reviews	-->
+              <Label Text="{Binding ReviewDescription}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Red" />
+
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Button Text="Add Review" Clicked="AddReview" VerticalOptions="CenterAndExpand" />
+    <Button Text="Delete Event" Clicked="DeleteEvent" VerticalOptions="CenterAndExpand" />
+  </StackLayout>
+</ContentPage>
